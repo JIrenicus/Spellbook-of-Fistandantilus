@@ -81,20 +81,36 @@
         }
 
         .crystal-toggle {
-            width: 20px;
-            height: 20px;
+            width: 40px; /* Doubled from 20px */
+            height: 40px; /* Doubled from 20px */
             background: url('images/crystal01.png') no-repeat center;
             background-size: contain;
             display: inline-block;
             vertical-align: middle;
             margin-right: 5px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            animation: blink 1.5s infinite; /* Blinking animation */
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+                box-shadow: 0 0 5px #00FF00, 0 0 10px #FF00FF; /* Neon green and magenta */
+            }
+            50% {
+                opacity: 0.5;
+                box-shadow: 0 0 10px #00FF00, 0 0 15px #FF00FF; /* Enhanced glow */
+            }
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 5px #00FF00, 0 0 10px #FF00FF;
+            }
         }
 
         .crystal-toggle:hover {
             transform: scale(1.2);
             filter: brightness(1.5);
+            animation: none; /* Pause blink on hover */
         }
 
         .folder.open .crystal-toggle {
