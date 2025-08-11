@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spellbook of Fistandantilus</title>
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Dragonlance-inspired color palette: Deep blacks and reds for evil magic and dragons, golds and silvers for heroic elements, earthy browns for ancient tomes. No greens. Evoking the epic fantasy of Krynn with wizards' robes (red, black, white) and metallic dragons. */
+        /* Retro D&D inspired colors with Dragonlance influences: Dark backgrounds like ancient tomes, earthy tones, gold accents, red for danger/magic. Mimicking old terminal with a fantasy twist, using muted silver instead of green. */
         body {
-            background-color: #000000; /* Deep black like the void of Takhisis */
+            background-color: #000000; /* Black like a dungeon void */
             color: #E0E0E0; /* Silver-white for text, like Solamnic knights' armor */
             font-family: 'Roboto', sans-serif; /* Readable Roboto for body text */
-            font-weight: 400; /* Less bold, normal weight */
+            font-weight: 400; /* Normal weight for readability */
             margin: 20px;
             padding: 0;
             font-size: 16px;
         }
 
         h1 {
-            font-family: 'Uncial Antiqua', cursive; /* Keep fantasy font for title */
-            color: #FFD700; /* Gold for headings, like Goldmoon or metallic dragons */
+            font-family: 'Uncial Antiqua', cursive; /* Fantasy font for title, inspired by original */
+            color: #FFD700; /* Gold for headings, like treasure */
             text-align: center;
-            text-shadow: 2px 2px 4px #8B0000; /* Dark red glow for draconic magic effect */
+            text-shadow: 2px 2px 4px #FF0000; /* Red glow for magical effect, matching original */
+            background-color: rgba(139, 0, 0, 0.7); /* Dark red backdrop, semi-transparent */
+            padding: 10px;
+            margin: 0 -20px; /* Full width adjustment to match body margin */
+            border-radius: 5px;
         }
 
         .highlight-box {
@@ -47,14 +51,14 @@
             cursor: pointer;
             margin: 5px 0;
             padding: 5px;
-            border: 1px solid #808080; /* Gray border like ancient stone */
-            background-color: #1A0000; /* Dark red-black for depth, like red dragon scales */
+            border: 1px solid #808080; /* Gray border like stone walls */
+            background-color: #1A1A1A; /* Dark gray for depth, matching original */
             border-radius: 5px;
             font-weight: 400; /* Less bold */
         }
 
         .folder:hover {
-            background-color: #330000;
+            background-color: #333333; /* Matching original hover */
         }
 
         .folder-content {
@@ -67,8 +71,8 @@
         .file {
             margin: 5px 0;
             padding: 5px;
-            background-color: #0D0D0D;
-            border: 1px solid #E0E0E0; /* Silver border */
+            background-color: #0D0D0D; /* Matching original */
+            border: 1px solid #E0E0E0; /* Silver border, Dragonlance influence */
             border-radius: 3px;
             font-weight: 400; /* Less bold */
         }
@@ -86,12 +90,12 @@
         /* Toggle icon simulation with text */
         .folder::before {
             content: '[+] ';
-            color: #8B0000; /* Dark red for closed folder */
+            color: #FF0000; /* Red for closed folder, matching original */
         }
 
         .folder.open::before {
             content: '[-] ';
-            color: #FFD700; /* Gold for open */
+            color: #FFD700; /* Gold for open, Dragonlance influence */
         }
     </style>
 </head>
