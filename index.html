@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spellbook of Fistandantilus</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <style>
-        /* Original retro D&D inspired colors without neon green: Dark backgrounds like ancient tomes, earthy tones, gold accents, red for danger/magic. Mimicking old terminal with a fantasy twist, but using muted green instead of neon. */
+        /* Dragonlance-inspired color palette: Deep blacks and reds for evil magic and dragons, golds and silvers for heroic elements, earthy browns for ancient tomes. No greens. Evoking the epic fantasy of Krynn with wizards' robes (red, black, white) and metallic dragons. */
         body {
-            background-color: #000000; /* Black like a dungeon void */
-            color: #228B22; /* Muted forest green for retro terminal text, non-neon */
-            font-family: 'Roboto', sans-serif; /* Changed to Roboto font */
+            background-color: #000000; /* Deep black like the void of Takhisis */
+            color: #E0E0E0; /* Silver-white for text, like Solamnic knights' armor */
+            font-family: 'Uncial Antiqua', cursive; /* Fantasy D&D vibe font, like ancient runes or scrolls */
             margin: 20px;
             padding: 0;
             font-size: 16px;
         }
 
         h1 {
-            color: #FFD700; /* Gold for headings, like treasure */
+            color: #FFD700; /* Gold for headings, like Goldmoon or metallic dragons */
             text-align: center;
-            text-shadow: 2px 2px 4px #FF0000; /* Red glow for magical effect */
+            text-shadow: 2px 2px 4px #8B0000; /* Dark red glow for draconic magic effect */
         }
 
         .highlight-box {
@@ -30,10 +30,10 @@
             color: #000000; /* Black text for contrast */
             text-align: center;
             font-weight: bold;
-            border: 2px solid #FF0000; /* Red border for magical accent */
+            border: 2px solid #8B0000; /* Dark red border for evil dragon accent */
             border-radius: 10px;
             width: fit-content;
-            box-shadow: 0 0 10px #FF0000; /* Red glow shadow */
+            box-shadow: 0 0 10px #8B0000; /* Dark red glow shadow */
         }
 
         .highlight-box:hover {
@@ -44,13 +44,13 @@
             cursor: pointer;
             margin: 5px 0;
             padding: 5px;
-            border: 1px solid #808080; /* Gray border like stone walls */
-            background-color: #1A1A1A; /* Dark gray for depth */
+            border: 1px solid #808080; /* Gray border like ancient stone */
+            background-color: #1A0000; /* Dark red-black for depth, like red dragon scales */
             border-radius: 5px;
         }
 
         .folder:hover {
-            background-color: #333333;
+            background-color: #330000;
         }
 
         .folder-content {
@@ -64,29 +64,29 @@
             margin: 5px 0;
             padding: 5px;
             background-color: #0D0D0D;
-            border: 1px solid #228B22; /* Muted green border */
+            border: 1px solid #E0E0E0; /* Silver border */
             border-radius: 3px;
         }
 
         .file a {
-            color: #00FFFF; /* Cyan for links, like enchanted items */
+            color: #FF4500; /* Orange-red for links, like fire-breathing dragons */
             text-decoration: none;
         }
 
         .file a:hover {
             text-decoration: underline;
-            color: #FF00FF; /* Magenta hover for spell effect */
+            color: #FFFFFF; /* White hover for spell effect */
         }
 
         /* Toggle icon simulation with text */
         .folder::before {
             content: '[+] ';
-            color: #FF0000; /* Red for closed folder */
+            color: #8B0000; /* Dark red for closed folder */
         }
 
         .folder.open::before {
             content: '[-] ';
-            color: #228B22; /* Muted green for open */
+            color: #FFD700; /* Gold for open */
         }
     </style>
 </head>
