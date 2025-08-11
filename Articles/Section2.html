@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 2 - Spellbook of Fistandantilus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <style>
+        /* Matching retro neon D&D vibes as the main page. */
+        body {
+            background-color: #000000; /* Black like a dungeon void */
+            color: #00FF00; /* Neon lime green for retro terminal text */
+            font-family: 'Courier New', Courier, monospace; /* Retro typewriter font */
+            margin: 20px;
+            padding: 0;
+            font-size: 16px;
+            perspective: 1000px; /* 3D perspective for flip effect */
+            overflow: hidden; /* Prevent scroll during animation */
+        }
+
+        .page-container {
+            opacity: 0; /* Start hidden */
+            transform: rotateY(180deg); /* Start flipped */
+            animation: openPage 2s ease-in-out forwards; /* Page opening animation */
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+
+        @keyframes openPage {
+            0% {
+                opacity: 0;
+                transform: rotateY(180deg);
+            }
+            100% {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+
+        h1 {
+            font-family: 'Uncial+Antiqua', cursive; /* Fantasy font for title */
+            color: #FFD700; /* Gold for headings */
+            text-align: center;
+            text-shadow: 2px 2px 4px #FF0000, 0 0 10px #FF0000; /* Enhanced red neon glow */
+        }
+
+        h2 {
+            color: #FFD700; /* Gold for subheadings */
+            text-shadow: 0 0 5px #FFD700; /* Subtle gold neon glow */
+        }
+
+        p {
+            line-height: 1.5;
+            text-shadow: 0 0 5px #00FF00; /* Subtle neon green glow on text */
+        }
+
+        a {
+            color: #00FFFF; /* Neon cyan for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #FF00FF; /* Neon magenta hover */
+            text-shadow: 0 0 10px #FF00FF; /* Neon magenta glow */
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1>Section 2: Deepening Your Mastery</h1>
+        <p>This section explores advanced techniques for building your MasteryChain. Focus on actionable steps and spellbook selection to accelerate your growth. More content to come as you progress through your journey...</p>
+        <p><a href="Introduction.html">Back to Introduction</a></p>
+    </div>
+</body>
+</html>
