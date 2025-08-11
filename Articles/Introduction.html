@@ -15,7 +15,6 @@
             padding: 0;
             font-size: 16px;
             perspective: 1000px; /* 3D perspective for flip effect */
-            /* Removed overflow: hidden to allow scrolling */
         }
 
         .page-container {
@@ -100,23 +99,23 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 120px; /* Increased size for visibility */
+            width: 120px;
             height: 120px;
             cursor: pointer;
-            background: url('https://via.placeholder.com/120?text=Crystal+Ball') no-repeat center; /* Placeholder image */
+            background: url('https://via.placeholder.com/120?text=Crystal+Ball') no-repeat center;
             background-size: cover;
-            border: 3px solid #00FF00; /* Thicker neon green border */
+            border: 3px solid #00FF00;
             border-radius: 50%;
-            box-shadow: 0 0 20px #00FF00, 0 0 30px #FF00FF; /* Enhanced glowing effect */
-            animation: shine 2s infinite alternate; /* Pulsing shine effect */
+            box-shadow: 0 0 20px #00FF00, 0 0 30px #FF00FF;
+            animation: shine 2s infinite alternate;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Uncial Antiqua', cursive; /* Wizard font */
-            font-style: italic; /* Italicized text */
-            color: #FFD700; /* Gold text */
-            text-shadow: 0 0 10px #FFD700, 0 0 20px #FF0000; /* Neon gold/red glow */
-            font-size: 14px; /* Adjustable size */
+            font-family: 'Uncial Antiqua', cursive;
+            font-style: italic;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FF0000;
+            font-size: 14px;
             text-align: center;
             padding: 5px;
             text-decoration: none;
@@ -125,7 +124,7 @@
         .next-page:hover {
             transform: scale(1.2);
             box-shadow: 0 0 30px #00FF00, 0 0 40px #FF00FF;
-            animation: none; /* Pause shine on hover for emphasis */
+            animation: none;
         }
 
         @keyframes shine {
@@ -136,10 +135,96 @@
                 box-shadow: 0 0 30px #00FF00, 0 0 40px #FF00FF;
             }
         }
+
+        .portal-frame {
+            position: relative;
+            display: inline-block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .portal-frame img {
+            display: block;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00FF00;
+        }
+
+        .portal-frame::before,
+        .portal-frame::after {
+            content: '';
+            position: absolute;
+            border: 3px solid transparent;
+            border-radius: 10px;
+            animation: portalGlow 2s infinite alternate;
+        }
+
+        .portal-frame::before {
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-top-color: #FF00FF; /* Neon magenta */
+            border-left-color: #FF00FF;
+            z-index: -1;
+        }
+
+        .portal-frame::after {
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border-bottom-color: #00FFFF; /* Neon cyan */
+            border-right-color: #00FFFF;
+            z-index: -2;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes portalGlow {
+            from {
+                box-shadow: 0 0 10px currentColor;
+            }
+            to {
+                box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+            }
+        }
+
+        .portal-frame .portal-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(255, 0, 255, 0.3) 0%, rgba(0, 255, 255, 0.2) 70%, transparent 100%);
+            animation: portalPulse 3s infinite ease-in-out;
+            border-radius: 10px;
+            z-index: -3;
+        }
+
+        @keyframes portalPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.5;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="page-container">
+        <div class="portal-frame">
+            <img src="../images/apprentice01.png" alt="Apprentice Wizard Studying" class="apprentice-image">
+            <div class="portal-effect"></div>
+        </div>
         <h1>Introduction to Spellbooks</h1>
         <p>There are only a few things that I have found truly can destroy a man’s soul:</p>
         <ul>
