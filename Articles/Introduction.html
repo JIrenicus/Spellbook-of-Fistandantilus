@@ -138,18 +138,15 @@
 
         .portal-frame {
             position: relative;
-            display: inline-block;
-            margin: 20px 0;
-            max-width: 100%;
+            display: block;
+            margin: 20px auto; /* Center the image */
+            max-width: 50%; /* Half the original size */
             height: auto;
-            overflow: hidden; /* Ensure borders stay within image bounds */
         }
 
         .portal-frame img {
             display: block;
-            max-width: 50%; /* Half the original size */
-            float: left; /* Align to the left with text wrapping */
-            margin-right: 20px; /* Space between image and text */
+            width: 100%; /* Ensure it fills the container */
             border-radius: 10px;
             box-shadow: 0 0 10px #00FF00;
         }
@@ -216,13 +213,6 @@
                 transform: translate(-50%, -50%) scale(0.8);
                 opacity: 0.5;
             }
-        }
-
-        /* Clearfix to handle float */
-        .portal-frame::after {
-            content: "";
-            display: table;
-            clear: both;
         }
     </style>
 </head>
