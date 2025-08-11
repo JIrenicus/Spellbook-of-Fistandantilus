@@ -6,12 +6,12 @@
     <title>Spellbook of Fistandantilus</title>
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <style>
-        /* Retro D&D inspired with more neon vibes: Black background, neon accents in links/hovers/shadows, typewriter font for hierarchy/content. */
+        /* Spellbook frame and retro D&D inspired with neon vibes */
         body {
             background-color: #000000; /* Black like a dungeon void */
             color: #00FF00; /* Neon lime green for retro terminal text */
             font-family: 'Courier New', Courier, monospace; /* Retro typewriter font */
-            margin: 20px;
+            margin: 0;
             padding: 0;
             font-size: 16px;
             opacity: 0; /* Start invisible */
@@ -27,6 +27,29 @@
             }
         }
 
+        .spellbook-frame {
+            max-width: 800px; /* Fixed width for spellbook effect */
+            margin: 20px auto;
+            padding: 20px;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVQYV2P8//8/AzGAwQeJMCQCIKCUoqQICQPIAgwMHgwP+AcwA4kQPAQAAAABJRU5ErkJggg==') repeat; /* Subtle parchment texture */
+            border: 5px solid #FFD700; /* Gold border like a spellbook edge */
+            border-radius: 10px;
+            box-shadow: 0 0 20px #FF00FF, 0 0 30px #00FF00; /* Neon magenta and green glow */
+            position: relative;
+        }
+
+        .spellbook-frame::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed #FF0000; /* Red dashed outer edge */
+            border-radius: 12px;
+            z-index: -1;
+        }
+
         h1 {
             font-family: 'Uncial Antiqua', cursive; /* Fantasy font for title */
             color: #FFD700; /* Gold for headings */
@@ -34,7 +57,7 @@
             text-shadow: 2px 2px 4px #FF0000, 0 0 10px #FF0000; /* Enhanced red neon glow */
             background-color: rgba(139, 0, 0, 0.7); /* Dark red backdrop */
             padding: 10px;
-            margin: 0 -20px; /* Full width adjustment */
+            margin: 0 -20px 20px -20px; /* Full width within frame, with bottom margin */
             border-radius: 5px;
         }
 
@@ -157,64 +180,104 @@
     </style>
 </head>
 <body>
-    <h1>Spellbook of Fistandantilus</h1>
-    <p>Explore arcane subjects like ancient scrolls in a wizard's tower. Click folders to delve deeper.</p>
+    <div class="spellbook-frame">
+        <h1>Spellbook of Fistandantilus</h1>
+        <p>Explore arcane subjects like ancient scrolls in a wizard's tower. Click folders to delve deeper.</p>
 
-    <a href="Articles/Introduction.html" style="text-decoration: none;">
-        <div class="highlight-box">START HERE : INTRODUCTION TO SPELLBOOKS</div>
-    </a>
+        <a href="Articles/Introduction.html" style="text-decoration: none;">
+            <div class="highlight-box">START HERE : INTRODUCTION TO SPELLBOOKS</div>
+        </a>
 
-    <div class="folder" onclick="toggleFolder(this)">
-        <span class="crystal-toggle"></span>Arcane Subjects
-    </div>
-    <div class="folder-content">
         <div class="folder" onclick="toggleFolder(this)">
-            <span class="crystal-toggle"></span>Fantasy (D&D Inspired)
+            <span class="crystal-toggle"></span>Arcane Subjects
         </div>
         <div class="folder-content">
-            <div class="file">Article: <a href="Articles/Introduction.html">Introduction</a></div>
-            <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">How to Play D&D</a></div>
+            <div class="folder" onclick="toggleFolder(this)">
+                <span class="crystal-toggle"></span>Fantasy (D&D Inspired)
+            </div>
+            <div class="folder-content">
+                <div class="file">Article: <a href="Articles/Introduction.html">Introduction</a></div>
+                <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">How to Play D&D</a></div>
+            </div>
+            <div class="folder" onclick="toggleFolder(this)">
+                <span class="crystal-toggle"></span>Lorem Ipsum Magic
+            </div>
+            <div class="folder-content">
+                <div class="file">Article: <a href="#">Lorem Article</a></div>
+                <div class="file">Video: <a href="#" target="_blank">Lorem Video</a></div>
+                <div class="folder" onclick="toggleFolder(this)">
+                    <span class="crystal-toggle"></span>Subsection A
+                </div>
+                <div class="folder-content">
+                    <div class="file">Article: <a href="#">Subsection A Article</a></div>
+                    <div class="file">Video: <a href="#" target="_blank">Subsection A Video</a></div>
+                </div>
+                <div class="folder" onclick="toggleFolder(this)">
+                    <span class="crystal-toggle"></span>Subsection B
+                </div>
+                <div class="folder-content">
+                    <div class="file">Article: <a href="#">Subsection B Article</a></div>
+                    <div class="file">Video: <a href="#" target="_blank">Subsection B Video</a></div>
+                </div>
+            </div>
+            <div class="folder" onclick="toggleFolder(this)">
+                <span class="crystal-toggle"></span>Ancient Rituals
+            </div>
+            <div class="folder-content">
+                <div class="file">Article: <a href="#">Ritual Guide</a></div>
+                <div class="file">Video: <a href="#" target="_blank">Ritual Demo</a></div>
+                <div class="folder" onclick="toggleFolder(this)">
+                    <span class="crystal-toggle"></span>Incantations
+                </div>
+                <div class="folder-content">
+                    <div class="file">Article: <a href="#">Incantation Basics</a></div>
+                    <div class="file">Video: <a href="#" target="_blank">Incantation Tutorial</a></div>
+                </div>
+                <div class="folder" onclick="toggleFolder(this)">
+                    <span class="crystal-toggle"></span>Ceremonies
+                </div>
+                <div class="folder-content">
+                    <div class="file">Article: <a href="#">Ceremony Lore</a></div>
+                    <div class="file">Video: <a href="#" target="_blank">Ceremony Footage</a></div>
+                </div>
+            </div>
         </div>
         <div class="folder" onclick="toggleFolder(this)">
-            <span class="crystal-toggle"></span>Lorem Ipsum Magic
+            <span class="crystal-toggle"></span>Mystic Arts
         </div>
         <div class="folder-content">
-            <div class="file">Article: <a href="#">Lorem Article</a></div>
-            <div class="file">Video: <a href="#" target="_blank">Lorem Video</a></div>
             <div class="folder" onclick="toggleFolder(this)">
-                <span class="crystal-toggle"></span>Subsection A
+                <span class="crystal-toggle"></span>Divination Techniques
             </div>
             <div class="folder-content">
-                <div class="file">Article: <a href="#">Subsection A Article</a></div>
-                <div class="file">Video: <a href="#" target="_blank">Subsection A Video</a></div>
+                <div class="file">Article: <a href="#">Divination Guide</a></div>
+                <div class="file">Video: <a href="#" target="_blank">Divination Demo</a></div>
             </div>
             <div class="folder" onclick="toggleFolder(this)">
-                <span class="crystal-toggle"></span>Subsection B
+                <span class="crystal-toggle"></span>Alchemy Basics
             </div>
             <div class="folder-content">
-                <div class="file">Article: <a href="#">Subsection B Article</a></div>
-                <div class="file">Video: <a href="#" target="_blank">Subsection B Video</a></div>
+                <div class="file">Article: <a href="#">Alchemy Primer</a></div>
+                <div class="file">Video: <a href="#" target="_blank">Alchemy Tutorial</a></div>
             </div>
         </div>
         <div class="folder" onclick="toggleFolder(this)">
-            <span class="crystal-toggle"></span>Ancient Rituals
+            <span class="crystal-toggle"></span>Enchanted Lore
         </div>
         <div class="folder-content">
-            <div class="file">Article: <a href="#">Ritual Guide</a></div>
-            <div class="file">Video: <a href="#" target="_blank">Ritual Demo</a></div>
             <div class="folder" onclick="toggleFolder(this)">
-                <span class="crystal-toggle"></span>Incantations
+                <span class="crystal-toggle"></span>Legendary Spells
             </div>
             <div class="folder-content">
-                <div class="file">Article: <a href="#">Incantation Basics</a></div>
-                <div class="file">Video: <a href="#" target="_blank">Incantation Tutorial</a></div>
+                <div class="file">Article: <a href="#">Legendary Spell Lore</a></div>
+                <div class="file">Video: <a href="#" target="_blank">Spell Casting</a></div>
             </div>
             <div class="folder" onclick="toggleFolder(this)">
-                <span class="crystal-toggle"></span>Ceremonies
+                <span class="crystal-toggle"></span>Mythical Creatures
             </div>
             <div class="folder-content">
-                <div class="file">Article: <a href="#">Ceremony Lore</a></div>
-                <div class="file">Video: <a href="#" target="_blank">Ceremony Footage</a></div>
+                <div class="file">Article: <a href="#">Creature Encyclopedia</a></div>
+                <div class="file">Video: <a href="#" target="_blank">Creature Encounters</a></div>
             </div>
         </div>
     </div>
