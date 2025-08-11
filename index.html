@@ -39,15 +39,84 @@
         .highlight-box:hover {
             background-color: #FFFF00; /* Brighter yellow on hover */
         }
+
+        .folder {
+            cursor: pointer;
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px solid #808080; /* Gray border like stone walls */
+            background-color: #1A1A1A; /* Dark gray for depth */
+            border-radius: 5px;
+        }
+
+        .folder:hover {
+            background-color: #333333;
+        }
+
+        .folder-content {
+            display: none;
+            margin-left: 20px;
+            border-left: 2px dashed #FFD700; /* Dashed gold line for hierarchy */
+            padding-left: 10px;
+        }
+
+        .file {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #0D0D0D;
+            border: 1px solid #228B22; /* Muted green border */
+            border-radius: 3px;
+        }
+
+        .file a {
+            color: #00FFFF; /* Cyan for links, like enchanted items */
+            text-decoration: none;
+        }
+
+        .file a:hover {
+            text-decoration: underline;
+            color: #FF00FF; /* Magenta hover for spell effect */
+        }
+
+        /* Toggle icon simulation with text */
+        .folder::before {
+            content: '[+] ';
+            color: #FF0000; /* Red for closed folder */
+        }
+
+        .folder.open::before {
+            content: '[-] ';
+            color: #228B22; /* Muted green for open */
+        }
     </style>
 </head>
 <body>
     <h1>Spellbook of Fistandantilus</h1>
-    <p>Explore arcane subjects like ancient scrolls in a wizard's tower.</p>
+    <p>Explore arcane subjects like ancient scrolls in a wizard's tower. Click folders to delve deeper.</p>
 
-    <a href="/Introduction.html" style="text-decoration: none;">
+    <a href="Articles/Introduction.html" style="text-decoration: none;">
         <div class="highlight-box">START HERE : INTRODUCTION TO SPELLBOOKS</div>
     </a>
 
+    <div class="folder" onclick="toggleFolder(this)">Arcane Subjects</div>
+    <div class="folder-content">
+        <div class="folder" onclick="toggleFolder(this)">Fantasy (D&D Inspired)</div>
+        <div class="folder-content">
+            <div class="file">Article: <a href="Articles/Introduction.html">Introduction</a></div>
+            <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">How to Play D&D</a></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFolder(element) {
+            element.classList.toggle('open');
+            let content = element.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
