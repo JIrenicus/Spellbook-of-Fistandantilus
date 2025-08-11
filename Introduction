@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro D&D File Explorer</title>
+    <style>
+        /* Retro D&D inspired colors: Dark backgrounds like ancient tomes, earthy tones, gold accents, red for danger/magic. Mimicking old terminal with a fantasy twist. */
+        body {
+            background-color: #000000; /* Black like a dungeon void */
+            color: #00FF00; /* Lime green for retro terminal text */
+            font-family: 'Courier New', Courier, monospace; /* Retro typewriter font */
+            margin: 20px;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        h1 {
+            color: #FFD700; /* Gold for headings, like treasure */
+            text-align: center;
+            text-shadow: 2px 2px 4px #FF0000; /* Red glow for magical effect */
+        }
+
+        .folder {
+            cursor: pointer;
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px solid #808080; /* Gray border like stone walls */
+            background-color: #1A1A1A; /* Dark gray for depth */
+            border-radius: 5px;
+        }
+
+        .folder:hover {
+            background-color: #333333;
+        }
+
+        .folder-content {
+            display: none;
+            margin-left: 20px;
+            border-left: 2px dashed #FFD700; /* Dashed gold line for hierarchy */
+            padding-left: 10px;
+        }
+
+        .file {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #0D0D0D;
+            border: 1px solid #00FF00;
+            border-radius: 3px;
+        }
+
+        .file a {
+            color: #00FFFF; /* Cyan for links, like enchanted items */
+            text-decoration: none;
+        }
+
+        .file a:hover {
+            text-decoration: underline;
+            color: #FF00FF; /* Magenta hover for spell effect */
+        }
+
+        /* Toggle icon simulation with text */
+        .folder::before {
+            content: '[+] ';
+            color: #FF0000; /* Red for closed folder */
+        }
+
+        .folder.open::before {
+            content: '[-] ';
+            color: #00FF00; /* Green for open */
+        }
+    </style>
+</head>
+<body>
+    <h1>Retro D&D Knowledge Vault</h1>
+    <p>Explore subjects like ancient scrolls in a dungeon. Click folders to delve deeper.</p>
+
+    <div class="folder" onclick="toggleFolder(this)">Subjects</div>
+    <div class="folder-content">
+        <div class="folder" onclick="toggleFolder(this)">History</div>
+        <div class="folder-content">
+            <div class="folder" onclick="toggleFolder(this)">Ancient Empires</div>
+            <div class="folder-content">
+                <div class="file">Article: <a href="https://example.com/roman-empire-article" target="_blank">The Roman Empire</a></div>
+                <div class="file">Video: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">History of Rome</a></div>
+            </div>
+            <div class="folder" onclick="toggleFolder(this)">Medieval Times</div>
+            <div class="folder-content">
+                <div class="file">Article: <a href="https://example.com/knights-article" target="_blank">Knights and Castles</a></div>
+                <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">Medieval Warfare</a></div>
+            </div>
+        </div>
+        <div class="folder" onclick="toggleFolder(this)">Science</div>
+        <div class="folder-content">
+            <div class="folder" onclick="toggleFolder(this)">Physics</div>
+            <div class="folder-content">
+                <div class="file">Article: <a href="https://example.com/quantum-article" target="_blank">Quantum Mechanics</a></div>
+                <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">Newton's Laws</a></div>
+            </div>
+            <div class="folder" onclick="toggleFolder(this)">Biology</div>
+            <div class="folder-content">
+                <div class="file">Article: <a href="https://example.com/dna-article" target="_blank">DNA Structure</a></div>
+                <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">Evolution Explained</a></div>
+            </div>
+        </div>
+        <div class="folder" onclick="toggleFolder(this)">Fantasy (D&D Inspired)</div>
+        <div class="folder-content">
+            <div class="file">Article: <a href="https://example.com/dragon-lore" target="_blank">Dragon Lore</a></div>
+            <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">How to Play D&D</a></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFolder(element) {
+            element.classList.toggle('open');
+            let content = element.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
