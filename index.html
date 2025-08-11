@@ -5,46 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spellbook of Fistandantilus</title>
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Retro D&D inspired colors with Dragonlance influences: Dark backgrounds like ancient tomes, earthy tones, gold accents, red for danger/magic. Mimicking old terminal with a fantasy twist, using muted silver instead of green. */
+        /* Retro D&D inspired with more neon vibes: Black background, neon accents in links/hovers/shadows, typewriter font for hierarchy/content. Blending original retro terminal with brighter neon glows. */
         body {
             background-color: #000000; /* Black like a dungeon void */
-            color: #E0E0E0; /* Silver-white for text, like Solamnic knights' armor */
-            font-family: 'Roboto', sans-serif; /* Readable Roboto for body text */
-            font-weight: 400; /* Normal weight for readability */
+            color: #00FF00; /* Neon lime green for retro terminal text */
+            font-family: 'Courier New', Courier, monospace; /* Retro typewriter font for hierarchy and content */
             margin: 20px;
             padding: 0;
             font-size: 16px;
         }
 
         h1 {
-            font-family: 'Uncial Antiqua', cursive; /* Fantasy font for title, inspired by original */
+            font-family: 'Uncial Antiqua', cursive; /* Fantasy font for title, as previously liked */
             color: #FFD700; /* Gold for headings, like treasure */
             text-align: center;
-            text-shadow: 2px 2px 4px #FF0000; /* Red glow for magical effect, matching original */
-            background-color: rgba(139, 0, 0, 0.7); /* Dark red backdrop, semi-transparent */
-            padding: 10px;
-            margin: 0 -20px; /* Full width adjustment to match body margin */
-            border-radius: 5px;
+            text-shadow: 2px 2px 4px #FF0000, 0 0 10px #FF0000; /* Enhanced red neon glow for magical effect */
         }
 
         .highlight-box {
             cursor: pointer;
             margin: 20px auto;
             padding: 15px;
-            background-color: #FFD700; /* Yellow-gold highlight for the box */
+            background-color: #FFD700; /* Yellow-gold highlight */
             color: #000000; /* Black text for contrast */
             text-align: center;
             font-weight: bold;
-            border: 2px solid #8B0000; /* Dark red border for evil dragon accent */
+            border: 2px solid #FF0000; /* Red border */
             border-radius: 10px;
             width: fit-content;
-            box-shadow: 0 0 10px #8B0000; /* Dark red glow shadow */
+            box-shadow: 0 0 15px #FF00FF; /* Neon magenta glow shadow */
         }
 
         .highlight-box:hover {
             background-color: #FFFF00; /* Brighter yellow on hover */
+            box-shadow: 0 0 20px #00FF00; /* Neon green hover glow */
         }
 
         .folder {
@@ -52,13 +47,14 @@
             margin: 5px 0;
             padding: 5px;
             border: 1px solid #808080; /* Gray border like stone walls */
-            background-color: #1A1A1A; /* Dark gray for depth, matching original */
+            background-color: #1A1A1A; /* Dark gray for depth */
             border-radius: 5px;
-            font-weight: 400; /* Less bold */
+            text-shadow: 0 0 5px #00FF00; /* Subtle neon green glow on text */
         }
 
         .folder:hover {
-            background-color: #333333; /* Matching original hover */
+            background-color: #333333;
+            box-shadow: 0 0 10px #FF00FF; /* Neon magenta hover glow */
         }
 
         .folder-content {
@@ -71,31 +67,34 @@
         .file {
             margin: 5px 0;
             padding: 5px;
-            background-color: #0D0D0D; /* Matching original */
-            border: 1px solid #E0E0E0; /* Silver border, Dragonlance influence */
+            background-color: #0D0D0D;
+            border: 1px solid #00FF00; /* Neon green border */
             border-radius: 3px;
-            font-weight: 400; /* Less bold */
+            text-shadow: 0 0 5px #00FF00; /* Subtle neon glow on text */
         }
 
         .file a {
-            color: #FF4500; /* Orange-red for links, like fire-breathing dragons */
+            color: #00FFFF; /* Neon cyan for links, like enchanted items */
             text-decoration: none;
         }
 
         .file a:hover {
             text-decoration: underline;
-            color: #FFFFFF; /* White hover for spell effect */
+            color: #FF00FF; /* Neon magenta hover for spell effect */
+            text-shadow: 0 0 10px #FF00FF; /* Enhanced neon glow on hover */
         }
 
         /* Toggle icon simulation with text */
         .folder::before {
             content: '[+] ';
-            color: #FF0000; /* Red for closed folder, matching original */
+            color: #FF0000; /* Red for closed folder */
+            text-shadow: 0 0 5px #FF0000; /* Neon red glow */
         }
 
         .folder.open::before {
             content: '[-] ';
-            color: #FFD700; /* Gold for open, Dragonlance influence */
+            color: #00FF00; /* Neon green for open */
+            text-shadow: 0 0 5px #00FF00; /* Neon green glow */
         }
     </style>
 </head>
