@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro D&D File Explorer</title>
+    <title>Spellbook of Fistandantilus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Retro D&D inspired colors: Dark backgrounds like ancient tomes, earthy tones, gold accents, red for danger/magic. Mimicking old terminal with a fantasy twist. */
+        /* Original retro D&D inspired colors without neon green: Dark backgrounds like ancient tomes, earthy tones, gold accents, red for danger/magic. Mimicking old terminal with a fantasy twist, but using muted green instead of neon. */
         body {
             background-color: #000000; /* Black like a dungeon void */
-            color: #00FF00; /* Lime green for retro terminal text */
-            font-family: 'Courier New', Courier, monospace; /* Retro typewriter font */
+            color: #228B22; /* Muted forest green for retro terminal text, non-neon */
+            font-family: 'Roboto', sans-serif; /* Changed to Roboto font */
             margin: 20px;
             padding: 0;
             font-size: 16px;
@@ -45,7 +46,7 @@
             margin: 5px 0;
             padding: 5px;
             background-color: #0D0D0D;
-            border: 1px solid #00FF00;
+            border: 1px solid #228B22; /* Muted green border */
             border-radius: 3px;
         }
 
@@ -67,45 +68,19 @@
 
         .folder.open::before {
             content: '[-] ';
-            color: #00FF00; /* Green for open */
+            color: #228B22; /* Muted green for open */
         }
     </style>
 </head>
 <body>
-    <h1>Retro D&D Knowledge Vault</h1>
-    <p>Explore subjects like ancient scrolls in a dungeon. Click folders to delve deeper.</p>
+    <h1>Spellbook of Fistandantilus</h1>
+    <p>Explore arcane subjects like ancient scrolls in a wizard's tower. Click folders to delve deeper.</p>
 
-    <div class="folder" onclick="toggleFolder(this)">Subjects</div>
+    <div class="folder" onclick="toggleFolder(this)">Arcane Subjects</div>
     <div class="folder-content">
-        <div class="folder" onclick="toggleFolder(this)">History</div>
-        <div class="folder-content">
-            <div class="folder" onclick="toggleFolder(this)">Ancient Empires</div>
-            <div class="folder-content">
-                <div class="file">Article: <a href="https://example.com/roman-empire-article" target="_blank">The Roman Empire</a></div>
-                <div class="file">Video: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">History of Rome</a></div>
-            </div>
-            <div class="folder" onclick="toggleFolder(this)">Medieval Times</div>
-            <div class="folder-content">
-                <div class="file">Article: <a href="https://example.com/knights-article" target="_blank">Knights and Castles</a></div>
-                <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">Medieval Warfare</a></div>
-            </div>
-        </div>
-        <div class="folder" onclick="toggleFolder(this)">Science</div>
-        <div class="folder-content">
-            <div class="folder" onclick="toggleFolder(this)">Physics</div>
-            <div class="folder-content">
-                <div class="file">Article: <a href="https://example.com/quantum-article" target="_blank">Quantum Mechanics</a></div>
-                <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">Newton's Laws</a></div>
-            </div>
-            <div class="folder" onclick="toggleFolder(this)">Biology</div>
-            <div class="folder-content">
-                <div class="file">Article: <a href="https://example.com/dna-article" target="_blank">DNA Structure</a></div>
-                <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">Evolution Explained</a></div>
-            </div>
-        </div>
         <div class="folder" onclick="toggleFolder(this)">Fantasy (D&D Inspired)</div>
         <div class="folder-content">
-            <div class="file">Article: <a href="https://example.com/dragon-lore" target="_blank">Dragon Lore</a></div>
+            <div class="file">Article: <a href="Articles/Introduction.html">Introduction</a></div>
             <div class="file">Video: <a href="https://www.youtube.com/watch?v=example" target="_blank">How to Play D&D</a></div>
         </div>
     </div>
