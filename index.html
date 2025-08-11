@@ -90,17 +90,17 @@
             margin-right: 5px;
             cursor: pointer;
             animation: blink 1.5s infinite; /* Blinking animation */
-            box-shadow: 0 0 20px #00FF00, 0 0 40px #FF00FF; /* Doubled base glow intensity */
+            box-shadow: 0 0 20px #00FF00, 0 0 40px #FF00FF; /* Base green glow when compressed */
         }
 
         @keyframes blink {
             0% {
                 opacity: 1;
-                box-shadow: 0 0 30px #00FF00, 0 0 60px #FF00FF; /* Doubled from 15px to 30px, 30px to 60px */
+                box-shadow: 0 0 30px #00FF00, 0 0 60px #FF00FF; /* Green glow */
             }
             50% {
                 opacity: 0.5;
-                box-shadow: 0 0 50px #00FF00, 0 0 80px #FF00FF; /* Doubled from 25px to 50px, 40px to 80px */
+                box-shadow: 0 0 50px #00FF00, 0 0 80px #FF00FF; /* Enhanced green glow */
             }
             100% {
                 opacity: 1;
@@ -116,6 +116,23 @@
 
         .folder.open .crystal-toggle {
             transform: rotate(90deg); /* Rotate to indicate open state */
+            box-shadow: 0 0 20px #FFA500, 0 0 40px #FFA500; /* Amber orange glow when expanded */
+            animation: blinkAmber 1.5s infinite; /* Amber blinking animation */
+        }
+
+        @keyframes blinkAmber {
+            0% {
+                opacity: 1;
+                box-shadow: 0 0 30px #FFA500, 0 0 60px #FFA500; /* Amber glow */
+            }
+            50% {
+                opacity: 0.5;
+                box-shadow: 0 0 50px #FFA500, 0 0 80px #FFA500; /* Enhanced amber glow */
+            }
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 30px #FFA500, 0 0 60px #FFA500;
+            }
         }
 
         .file {
