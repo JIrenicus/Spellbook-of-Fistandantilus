@@ -38,7 +38,7 @@
         }
 
         h1 {
-            font-family: 'Uncial Antiqua', cursive; /* Fantasy font for title */
+            font-family: 'Uncial+Antiqua', cursive; /* Fantasy font for title */
             color: #FFD700; /* Gold for headings */
             text-align: center;
             text-shadow: 2px 2px 4px #FF0000, 0 0 10px #FF0000; /* Enhanced red neon glow */
@@ -95,6 +95,26 @@
             border-top: 2px dashed #FFD700;
             margin: 20px 0;
         }
+
+        .next-page {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            background: url('https://via.placeholder.com/80?text=Crystal+Ball') no-repeat center; /* Placeholder image */
+            background-size: cover;
+            border: 2px solid #00FF00;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #00FF00;
+            transition: transform 0.3s ease;
+        }
+
+        .next-page:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #FF00FF;
+        }
     </style>
 </head>
 <body>
@@ -145,6 +165,8 @@
         <p>OK you special retard – your issue is not action learning, it’s literally just action. So let’s address that.</p>
 
         <p><a href="https://jirenicus.github.io/Spellbook-of-Fistandantilus/">Back to Spellbook</a></p>
+
+        <a href="Section2.html" class="next-page"></a>
     </div>
 </body>
 </html>
