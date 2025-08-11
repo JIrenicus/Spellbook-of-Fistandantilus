@@ -90,21 +90,21 @@
             margin-right: 5px;
             cursor: pointer;
             animation: blink 1.5s infinite; /* Blinking animation */
-            box-shadow: 0 0 10px #00FF00, 0 0 20px #FF00FF; /* Base brighter glow */
+            box-shadow: 0 0 20px #00FF00, 0 0 40px #FF00FF; /* Doubled base glow intensity */
         }
 
         @keyframes blink {
             0% {
                 opacity: 1;
-                box-shadow: 0 0 15px #00FF00, 0 0 30px #FF00FF; /* Brighter green and magenta */
+                box-shadow: 0 0 30px #00FF00, 0 0 60px #FF00FF; /* Doubled from 15px to 30px, 30px to 60px */
             }
             50% {
                 opacity: 0.5;
-                box-shadow: 0 0 25px #00FF00, 0 0 40px #FF00FF; /* Enhanced glow intensity */
+                box-shadow: 0 0 50px #00FF00, 0 0 80px #FF00FF; /* Doubled from 25px to 50px, 40px to 80px */
             }
             100% {
                 opacity: 1;
-                box-shadow: 0 0 15px #00FF00, 0 0 30px #FF00FF;
+                box-shadow: 0 0 30px #00FF00, 0 0 60px #FF00FF;
             }
         }
 
