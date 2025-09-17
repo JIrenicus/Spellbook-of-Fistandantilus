@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Spellbook of Fistandantilus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <style>
+        /* Matching retro neon D&D vibes as the main page. */
+        body {
+            background-color: #000000; /* Black like a dungeon void */
+            color: #00FF00; /* Neon lime green for retro terminal text */
+            font-family: 'Courier New', Courier, monospace; /* Retro typewriter font */
+            margin: 20px;
+            padding: 0;
+            font-size: 16px;
+            perspective: 1000px; /* 3D perspective for flip effect */
+        }
+
+        .page-container {
+            opacity: 0; /* Start hidden */
+            transform: rotateY(180deg); /* Start flipped */
+            animation: openPage 2s ease-in-out forwards; /* Page opening animation */
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+
+        @keyframes openPage {
+            0% {
+                opacity: 0;
+                transform: rotateY(180deg);
+            }
+            100% {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+
+        h1 {
+            font-family: 'Uncial+Antiqua', cursive; /* Fantasy font for title */
+            color: #FFD700; /* Gold for headings */
+            text-align: center;
+            text-shadow: 2px 2px 4px #FF0000, 0 0 10px #FF0000; /* Enhanced red neon glow */
+        }
+
+        h2 {
+            color: #FFD700; /* Gold for subheadings */
+            text-shadow: 0 0 5px #FFD700; /* Subtle gold neon glow */
+        }
+
+        h3 {
+            color: #00FFFF; /* Neon cyan for sub-subheadings */
+            text-shadow: 0 0 5px #00FFFF; /* Neon cyan glow */
+        }
+
+        h4 {
+            color: #FF00FF; /* Neon magenta for option headings */
+            text-shadow: 0 0 5px #FF00FF;
+        }
+
+        p {
+            line-height: 1.5;
+            text-shadow: 0 0 5px #00FF00; /* Subtle neon green glow on text */
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            list-style-type: square;
+            color: #00FF00;
+            text-shadow: 0 0 5px #00FF00;
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #00FF00; /* Neon green border */
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00FF00; /* Neon green glow */
+        }
+
+        a {
+            color: #00FFFF; /* Neon cyan for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #FF00FF; /* Neon magenta hover */
+            text-shadow: 0 0 10px #FF00FF; /* Neon magenta glow */
+        }
+
+        .section-break {
+            border: 0;
+            border-top: 2px dashed #FFD700;
+            margin: 20px 0;
+        }
+
+        .next-page {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+            background: url('https://via.placeholder.com/120?text=Crystal+Ball') no-repeat center;
+            background-size: cover;
+            border: 3px solid #00FF00;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #00FF00, 0 0 30px #FF00FF;
+            animation: shine 2s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Uncial Antiqua', cursive;
+            font-style: italic;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FF0000;
+            font-size: 14px;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+        }
+
+        .next-page:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px #00FF00, 0 0 40px #FF00FF;
+            animation: none;
+        }
+
+        @keyframes shine {
+            from {
+                box-shadow: 0 0 20px #00FF00, 0 0 30px #FF00FF;
+            }
+            to {
+                box-shadow: 0 0 30px #00FF00, 0 0 40px #FF00FF;
+            }
+        }
+
+        .portal-frame {
+            position: relative;
+            display: block;
+            margin: 20px auto; /* Center the image */
+            max-width: 50%; /* Half the original size */
+            height: auto;
+        }
+
+        .portal-frame img {
+            display: block;
+            width: 100%; /* Ensure it fills the container */
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00FF00;
+        }
+
+        .portal-frame::before,
+        .portal-frame::after {
+            content: '';
+            position: absolute;
+            border: 3px solid transparent;
+            border-radius: 10px;
+            animation: portalGlow 2s infinite alternate;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-sizing: border-box; /* Include border in element size */
+        }
+
+        .portal-frame::before {
+            border-top-color: #FF00FF; /* Neon magenta */
+            border-left-color: #FF00FF;
+            z-index: -1;
+        }
+
+        .portal-frame::after {
+            border-bottom-color: #00FFFF; /* Neon cyan */
+            border-right-color: #00FFFF;
+            z-index: -2;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes portalGlow {
+            from {
+                box-shadow: 0 0 10px currentColor;
+            }
+            to {
+                box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+            }
+        }
+
+        .portal-frame .portal-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(255, 0, 255, 0.3) 0%, rgba(0, 255, 255, 0.2) 70%, transparent 100%);
+            animation: portalPulse 3s infinite ease-in-out;
+            border-radius: 10px;
+            z-index: -3;
+        }
+
+        @keyframes portalPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1>Introduction to Spellbooks</h1>
+        <p>There are only a few things that I have found truly can destroy a man’s soul:</p>
+        <ul>
+            <li>The loss of a child.</li>
+            <li>The loss of your wife.</li>
+            <li>The thought of what you could have been, what you can be, and what you currently are.</li>
+        </ul>
+        <p>The first two, I have no advice – only God can help you there.</p>
+        <p>As far as the third goes, we must establish some fundamental rules:</p>
+        <h2>Fundamental Rules</h2>
+        <ol>
+            <li><strong>Your life in the Materium (physical space) matters.</strong> What you do, create, think, touch, see, hear, eat, move, AFFECT – MATTERS. This will not be a discussion as to why. You can choose to explain it to yourself from a pious lens, spiritually, logically; I don’t really care how you convince yourself. If you must convince yourself by some mental gymnastics, then you are weak, cowardly, and should CHOOSE to no longer need this mental pampering. You are a serious man, made of the Lord; act accordingly.</li>
+        </ol>
+        <p>Without this belief in yourself, in your ultimate true self, you will never achieve the far reaches of mastery while maintaining joy. Notice, I didn’t say either isn’t achievable without the other, but both together is impossible without these laws.</p>
+
+        <h2>Factors of Learning</h2>
+        <p>ACTION, SPELLBOOKS, TIME, MONEY.</p>
+
+        <h2>Nomenclature</h2>
+        <h3>Spell(s) and SpellChain</h3>
+        <p>A specific topic or outcome you wish to pursue, often a very small branch of a large set. Think “I want to learn naturopathy → I want to learn about naturopathy medicines → I want to learn about digestion issues through naturopathy → I want to learn about the exact herbs used for parasitic digestion infestation through the lens of naturopathy → I want to learn about the one specific ingredient in relation to the parasitic digestion issue through the lens of naturopathy.” The first part is a big spell; as we go down, they turn into micro spells, all of which will be necessary to execute the big spell. Multiple spells make a SpellChain. Multiple SpellChains create a MasteryChain.</p>
+
+        <h3>MasteryChain</h3>
+        <p>The ultimate form of wizardry. Think of it like becoming the Tom Brady of Quarterbacks. The Napoleon of military conquest. The Ernst Rüdin of eugenics. You get it. This is a longer topic, one that I will constantly remind you and reinforce. It is a yearly, monthly, weekly, daily, hourly, bi-hourly process that you must analyze.</p>
+
+        <h2>SPELLBOOK</h2>
+        <p>One question always: What spell, spells, or spellbook will benefit me the MOST at this moment in time in regard to my MasteryChain.</p>
+
+        <h2>ACTION LEARNING</h2>
+        <p><strong>1 hour of action learning is worth more than any theoretical or academic learning.</strong></p>
+        <p>What does this mean: In order to “ACTION LEARN” we need incredibly small inputs of academic/theoretical knowledge – and must immediately multiply it by engaging in action learning, only reaching for more input as problems arise.</p>
+        <div class="portal-frame">
+            <img src="../images/apprentice01.png" alt="Apprentice Wizard Studying">
+        </div>
+        <p>When problems arise you cannot solve, HOW we scour for more input, what spellbooks we use for the input, and the duration of time spent on “finding the right spell” vs actionable casting spells is what will determine your mastery time regression.</p>
+
+        <h3>Example 2a</h3>
+        <h4>Option 1:</h4>
+        <p>You read about the inverse relationship between Bond Yields on the 10Y Treasuries and GOLD prices. You immediately write this on your paper, highlighting some words. You make a mental note to remember to review this later. Maybe you even tell yourself you will “look into” the historical evidence of this at a later time.</p>
+        <h4>Option 2:</h4>
+        <p>You read about the inverse relationship between Bond Yields on the 10Y Treasuries and GOLD prices. 
+            You stop briefly and think about whether this information will help you with your immediate goal of 
+            learning a certain spell. If NO, then put into long-term archive list. If NO but you see an apparent 
+            benefit to the knowledge slightly higher on the spell chain, add to short/medium term archive. If YES, 
+            you immediately put the book down, open up ANY available resource, charting software, AI, Google, and begin 
+            looking at charts throughout the years, trying to gauge the patterns. After a while you “see” a pattern or
+            a way of catching their relationship. You now decide whether you must dive deeper into the understanding of 
+            this for your mastery chain spell, or whether this level of knowledge will suffice. If Yes, continue; the 
+            memory is now attached to time spent researching it, you will never forget their relationship. If NO, then
+            determine the next step that will have MASSIVE effect on your knowledge. THIS IS A KEY PRINCIPLE AND ONE OF 
+            THE MOST IMPORTANT. After the first layer of spell research, generally the branch of topics becomes HUGE. Learning 
+            about BONDS, specific to just US BONDS, could take MONTHS of intense studying to grasp at a master level. So 
+            what EXACTLY should you learn about bonds and gold that will have the MOST effect on your desired spell outcome. 
+            This takes practice, time, and effort. I will help you through this guide, but 100% win rate is not possible. We 
+            are risk managers in this regard. So let's say your ultimate goal is to invest in gold from a speculator standpoint,
+            then maybe researching yield auctions, their dates, and developing a little Excel program to remind you and track 
+            the results would suffice. Notice that this has now opened up an entire realm of new spellbooks (DATA ANALYSIS, 
+            PROGRAMMING, ORGANIZATIONAL DOCUMENT MANAGEMENT, EXCEL, ETC) that you probably know nothing about. So, we start
+            back at Phase 1: What is the most important Spellbook for me to train? Should I shift my focus on learning excel?
+            Is this the spellbook I’m missing now that will most impact and help me learn the next spells for the mastery chain? 
+            I hope this is starting to make sense.</p>
+
+        <hr class="section-break">
+
+        <h2>Additional Notes for those with “ADHD”</h2>
+        <p>COMING SOON</p>
+        <p>OK you special retard – your issue is not action learning, it’s literally just action. So let’s address that.</p>
+
+        <p><a href="https://jirenicus.github.io/Spellbook-of-Fistandantilus/">Back to Spellbook</a></p>
+
+        <a href="Section2.html" class="next-page">NEXT PAGE</a>
+    </div>
+</body>
+</html>
