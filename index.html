@@ -1,4 +1,4 @@
-co<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,6 @@ co<!DOCTYPE html>
             opacity: 0; /* Start invisible */
             animation: fadeIn 3s ease-in-out forwards; /* Fade-in animation */
         }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -26,7 +25,6 @@ co<!DOCTYPE html>
                 opacity: 1;
             }
         }
-
         .spellbook-frame {
             max-width: 800px; /* Fixed width for spellbook effect */
             margin: 20px auto;
@@ -37,7 +35,6 @@ co<!DOCTYPE html>
             box-shadow: 0 0 20px #FF00FF, 0 0 30px #00FF00; /* Neon magenta and green glow */
             position: relative;
         }
-
         .spellbook-frame::before {
             content: '';
             position: absolute;
@@ -49,7 +46,6 @@ co<!DOCTYPE html>
             border-radius: 12px;
             z-index: -1;
         }
-
         h1 {
             font-family: 'Uncial Antiqua', cursive; /* Fantasy font for title */
             color: #FFD700; /* Gold for headings */
@@ -60,7 +56,6 @@ co<!DOCTYPE html>
             margin: 0 -20px 20px -20px; /* Full width within frame, with bottom margin */
             border-radius: 5px;
         }
-
         .highlight-box {
             cursor: pointer;
             margin: 20px auto;
@@ -74,12 +69,10 @@ co<!DOCTYPE html>
             width: fit-content;
             box-shadow: 0 0 15px #FF00FF; /* Neon magenta glow shadow */
         }
-
         .highlight-box:hover {
             background-color: #FFFF00; /* Brighter yellow on hover */
             box-shadow: 0 0 20px #00FF00; /* Neon green hover glow */
         }
-
         .folder {
             cursor: pointer;
             margin: 5px 0;
@@ -90,19 +83,16 @@ co<!DOCTYPE html>
             position: relative; /* For crystal ball positioning */
             text-shadow: 0 0 5px #00FF00; /* Subtle neon green glow */
         }
-
         .folder:hover {
             background-color: #333333;
             box-shadow: 0 0 10px #FF00FF; /* Neon magenta hover glow */
         }
-
         .folder-content {
             display: none;
             margin-left: 20px;
             border-left: 2px dashed #FFD700; /* Dashed gold line for hierarchy */
             padding-left: 10px;
         }
-
         .crystal-toggle {
             width: 50px; /* Increased from 40px to 50px (25% bigger) */
             height: 50px; /* Increased from 40px to 50px (25% bigger) */
@@ -115,7 +105,6 @@ co<!DOCTYPE html>
             animation: blink 1.5s infinite; /* Blinking animation */
             box-shadow: 0 0 20px #00FF00, 0 0 40px #FF00FF; /* Base green glow when compressed */
         }
-
         @keyframes blink {
             0% {
                 opacity: 1;
@@ -130,19 +119,16 @@ co<!DOCTYPE html>
                 box-shadow: 0 0 30px #00FF00, 0 0 60px #FF00FF;
             }
         }
-
         .crystal-toggle:hover {
             transform: scale(1.2);
             filter: brightness(1.5);
             animation: none; /* Pause blink on hover */
         }
-
         .folder.open .crystal-toggle {
             transform: rotate(90deg); /* Rotate to indicate open state */
             box-shadow: 0 0 20px #FFA500, 0 0 40px #FFA500; /* Amber orange glow when expanded */
             animation: blinkAmber 1.5s infinite; /* Amber blinking animation */
         }
-
         @keyframes blinkAmber {
             0% {
                 opacity: 1;
@@ -157,7 +143,6 @@ co<!DOCTYPE html>
                 box-shadow: 0 0 30px #FFA500, 0 0 60px #FFA500;
             }
         }
-
         .file {
             margin: 5px 0;
             padding: 5px;
@@ -166,12 +151,10 @@ co<!DOCTYPE html>
             border-radius: 3px;
             text-shadow: 0 0 5px #00FF00; /* Subtle neon glow */
         }
-
         .file a {
             color: #00FFFF; /* Neon cyan for links */
             text-decoration: none;
         }
-
         .file a:hover {
             text-decoration: underline;
             color: #FF00FF; /* Neon magenta hover */
@@ -183,11 +166,15 @@ co<!DOCTYPE html>
     <div class="spellbook-frame">
         <h1>Spellbook of Fistandantilus</h1>
         <p>Explore arcane subjects like ancient scrolls in a wizard's tower. Click folders to delve deeper.</p>
-
         <a href="Articles/Introduction.html" style="text-decoration: none;">
             <div class="highlight-box">*READ ME FIRST* : INTRODUCTION TO SPELLBOOKS</div>
         </a>
-
+        <div class="folder" onclick="toggleFolder(this)">
+            <span class="crystal-toggle"></span>DAILY REVIEWS
+        </div>
+        <div class="folder-content">
+            <div class="file">Article: <a href="Articles/09_17_2025_DFA.html">09/17/2025 DFA</a></div>
+        </div>
         <div class="folder" onclick="toggleFolder(this)">
             <span class="crystal-toggle"></span>The Rigged World Of Markets [Trading/ECON/Game Theory]
         </div>
@@ -281,7 +268,6 @@ co<!DOCTYPE html>
             </div>
         </div>
     </div>
-
     <script>
         function toggleFolder(element) {
             element.classList.toggle('open');
