@@ -1,0 +1,141 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../17092025_DFA_EXCEL_WEB.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(5);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../17092025_DFA_EXCEL_WEB.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#467886" vlink="#96607D">
+
+<table border=0 cellpadding=0 cellspacing=0 width=1030 style='border-collapse:
+ collapse;table-layout:fixed;width:773pt'>
+ <col width=131 style='mso-width-source:userset;mso-width-alt:4561;width:98pt'>
+ <col width=92 style='mso-width-source:userset;mso-width-alt:3211;width:69pt'>
+ <col width=125 style='mso-width-source:userset;mso-width-alt:4375;width:94pt'>
+ <col width=105 style='mso-width-source:userset;mso-width-alt:3677;width:79pt'>
+ <col width=107 style='mso-width-source:userset;mso-width-alt:3723;width:80pt'>
+ <col width=109 style='mso-width-source:userset;mso-width-alt:3816;width:82pt'>
+ <col width=107 style='mso-width-source:userset;mso-width-alt:3723;width:80pt'>
+ <col width=254 style='mso-width-source:userset;mso-width-alt:8866;width:191pt'>
+ <tr height=116 style='height:87.0pt'>
+  <td height=116 class=xl88 width=131 style='height:87.0pt;width:98pt'>Instrument</td>
+  <td class=xl88 width=92 style='width:69pt'>Tick Value</td>
+  <td class=xl88 width=125 style='width:94pt'>Assumed High-Vol Rotation (Ticks)</td>
+  <td class=xl88 width=105 style='width:79pt'>Stop Distance (Ticks/Points)</td>
+  <td class=xl88 width=107 style='width:80pt'>Max Contracts (for $18.75 Risk)</td>
+  <td class=xl88 width=109 style='width:82pt'>Scaling Example (3 Contracts, if
+  Possible)</td>
+  <td class=xl88 width=107 style='width:80pt'>Est. R-Factor (Full Win/Loss)</td>
+  <td class=xl88 width=254 style='width:191pt'>Notes</td>
+ </tr>
+ <tr height=135 style='height:101.5pt'>
+  <td height=135 class=xl85 width=131 style='height:101.5pt;width:98pt'>MES
+  (Micro S&amp;P)</td>
+  <td class=xl89 align=right width=92 style='width:69pt'>$1.25 </td>
+  <td class=xl85 width=125 style='width:94pt'>60 (15 points)</td>
+  <td class=xl85 width=105 style='width:79pt'>60 ticks (15 pts)</td>
+  <td class=xl85 width=107 style='width:80pt'>1 (18.75 / (60 × 1.25) = 0.25
+  &#8594; round up to 1, risk $75 &#8594; tighten stop to 12 ticks for $18.75)</td>
+  <td class=xl85 width=109 style='width:82pt'>Use 1 contract: Target 30 ticks
+  ($37.50, R=2:1). If vol lower, up to 3 (stop 4 ticks).</td>
+  <td class=xl85 width=107 style='width:80pt'>2:1 (tight stop) to 3:1 (with
+  runner)</td>
+  <td class=xl85 width=254 style='width:191pt'>Equities: Wider ranges favor
+  runners. Wait for ES 4420-type magnets.</td>
+ </tr>
+ <tr height=116 style='height:87.0pt'>
+  <td height=116 class=xl85 width=131 style='height:87.0pt;width:98pt'>MNQ
+  (Micro Nasdaq)</td>
+  <td class=xl89 align=right width=92 style='width:69pt'>$0.50 </td>
+  <td class=xl85 width=125 style='width:94pt'>60 (15 points)</td>
+  <td class=xl85 width=105 style='width:79pt'>60 ticks (15 pts)</td>
+  <td class=xl85 width=107 style='width:80pt'>2 (18.75 / (60 × 0.50) = 0.625
+  &#8594; 2 contracts, risk $30 &#8594; tighten to 40 ticks for $18.75 total)</td>
+  <td class=xl85 width=109 style='width:82pt'>2 contracts: Scale 1 at 24 ticks
+  ($6 profit); runner to 80 ticks ($20, total win ~$26).</td>
+  <td class=xl85 width=107 style='width:80pt'>2.5:1</td>
+  <td class=xl85 width=254 style='width:191pt'>Thinner liquidity: Avoid thin
+  hours. Higher beta than MES—size down 20% on news.</td>
+ </tr>
+ <tr height=97 style='height:72.5pt'>
+  <td height=97 class=xl85 width=131 style='height:72.5pt;width:98pt'>MGC
+  (Micro Gold)</td>
+  <td class=xl89 align=right width=92 style='width:69pt'>$1.00 </td>
+  <td class=xl85 width=125 style='width:94pt'>40 (4 points)</td>
+  <td class=xl85 width=105 style='width:79pt'>40 ticks (4 pts)</td>
+  <td class=xl85 width=107 style='width:80pt'>1 (18.75 / (40 × 1) = 0.47
+  &#8594; 1 contract, risk $40 &#8594; tighten to 19 ticks)</td>
+  <td class=xl85 width=109 style='width:82pt'>Use 1 contract: Target 38 ticks
+  ($38, R~2:1). If rotation &lt;30 ticks, up to 2-3.</td>
+  <td class=xl90 align=right width=107 style='width:80pt'>2:01</td>
+  <td class=xl85 width=254 style='width:191pt'>Geopolitical vol: Use pit
+  session stats. Higher rotations on USD news—monitor sigma bands.</td>
+ </tr>
+ <tr height=97 style='height:72.5pt'>
+  <td height=97 class=xl85 width=131 style='height:72.5pt;width:98pt'>MCL
+  (Micro Crude)</td>
+  <td class=xl89 align=right width=92 style='width:69pt'>$1.00 </td>
+  <td class=xl85 width=125 style='width:94pt'>40 (0.4 points)</td>
+  <td class=xl85 width=105 style='width:79pt'>40 ticks (0.4 pts)</td>
+  <td class=xl85 width=107 style='width:80pt'>1 (same as MGC: tighten to 19
+  ticks)</td>
+  <td class=xl85 width=109 style='width:82pt'>Use 1 contract: Target 38 ticks
+  ($38). Up to 3 if low vol (stop 6 ticks).</td>
+  <td class=xl90 align=right width=107 style='width:80pt'>2:01</td>
+  <td class=xl85 width=254 style='width:191pt'>Inventory/news spikes: Pit
+  session focus. Thinner than equities—skip if liquidity &lt;50 contracts.</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=131 style='width:98pt'></td>
+  <td width=92 style='width:69pt'></td>
+  <td width=125 style='width:94pt'></td>
+  <td width=105 style='width:79pt'></td>
+  <td width=107 style='width:80pt'></td>
+  <td width=109 style='width:82pt'></td>
+  <td width=107 style='width:80pt'></td>
+  <td width=254 style='width:191pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
