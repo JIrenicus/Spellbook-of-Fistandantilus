@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Viewer - Spellbook of Fistandantilus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <style>
+        /* Matching retro neon D&D vibes as the main page. */
+        body {
+            background-color: #000000; /* Black like a dungeon void */
+            color: #00FF00; /* Neon lime green for retro terminal text */
+            font-family: 'Courier New', Courier, monospace; /* Retro typewriter font */
+            margin: 20px;
+            padding: 0;
+            font-size: 16px;
+            perspective: 1000px; /* 3D perspective for flip effect */
+        }
+        .page-container {
+            opacity: 0; /* Start hidden */
+            transform: rotateY(180deg); /* Start flipped */
+            animation: openPage 2s ease-in-out forwards; /* Page opening animation */
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+        @keyframes openPage {
+            0% {
+                opacity: 0;
+                transform: rotateY(180deg);
+            }
+            100% {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+        h1 {
+            font-family: 'Uncial+Antiqua', cursive; /* Fantasy font for title */
+            color: #FFD700; /* Gold for headings */
+            text-align: center;
+            text-shadow: 2px 2px 4px #FF0000, 0 0 10px #FF0000; /* Enhanced red neon glow */
+        }
+        h2 {
+            color: #FFD700; /* Gold for subheadings */
+            text-shadow: 0 0 5px #FFD700; /* Subtle gold neon glow */
+        }
+        h3 {
+            color: #00FFFF; /* Neon cyan for sub-subheadings */
+            text-shadow: 0 0 5px #00FFFF; /* Neon cyan glow */
+        }
+        h4 {
+            color: #FF00FF; /* Neon magenta for option headings */
+            text-shadow: 0 0 5px #FF00FF;
+        }
+        p {
+            line-height: 1.5;
+            text-shadow: 0 0 5px #00FF00; /* Subtle neon green glow on text */
+        }
+        ul, ol {
+            margin-left: 20px;
+            list-style-type: square;
+            color: #00FF00;
+            text-shadow: 0 0 5px #00FF00;
+        }
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #00FF00; /* Neon green border */
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00FF00; /* Neon green glow */
+        }
+        a {
+            color: #00FFFF; /* Neon cyan for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #FF00FF; /* Neon magenta hover */
+            text-shadow: 0 0 10px #FF00FF; /* Neon magenta glow */
+        }
+        .section-break {
+            border: 0;
+            border-top: 2px dashed #FFD700;
+            margin: 20px 0;
+        }
+        .next-page {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+            background: url('https://via.placeholder.com/120?text=Crystal+Ball') no-repeat center;
+            background-size: cover;
+            border: 3px solid #00FF00;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #00FF00, 0 0 30px #FF00FF;
+            animation: shine 2s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Uncial Antiqua', cursive;
+            font-style: italic;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FF0000;
+            font-size: 14px;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+        }
+        .next-page:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px #00FF00, 0 0 40px #FF00FF;
+            animation: none;
+        }
+        @keyframes shine {
+            from {
+                box-shadow: 0 0 20px #00FF00, 0 0 30px #FF00FF;
+            }
+            to {
+                box-shadow: 0 0 30px #00FF00, 0 0 40px #FF00FF;
+            }
+        }
+        .portal-frame {
+            position: relative;
+            display: block;
+            margin: 20px auto; /* Center the image */
+            max-width: 50%; /* Half the original size */
+            height: auto;
+        }
+        .portal-frame img {
+            display: block;
+            width: 100%; /* Ensure it fills the container */
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00FF00;
+        }
+        .portal-frame::before,
+        .portal-frame::after {
+            content: '';
+            position: absolute;
+            border: 3px solid transparent;
+            border-radius: 10px;
+            animation: portalGlow 2s infinite alternate;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-sizing: border-box; /* Include border in element size */
+        }
+        .portal-frame::before {
+            border-top-color: #FF00FF; /* Neon magenta */
+            border-left-color: #FF00FF;
+            z-index: -1;
+        }
+        .portal-frame::after {
+            border-bottom-color: #00FFFF; /* Neon cyan */
+            border-right-color: #00FFFF;
+            z-index: -2;
+            animation-delay: 0.5s;
+        }
+        @keyframes portalGlow {
+            from {
+                box-shadow: 0 0 10px currentColor;
+            }
+            to {
+                box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+            }
+        }
+        .portal-frame .portal-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(255, 0, 255, 0.3) 0%, rgba(0, 255, 255, 0.2) 70%, transparent 100%);
+            animation: portalPulse 3s infinite ease-in-out;
+            border-radius: 10px;
+            z-index: -3;
+        }
+        @keyframes portalPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1>BUILDING EVENING TIME CHART ANALYSIS TONIGHT WILL POST LATER</h1>
+        <p>WORKING ON NEW EXCEL FILE TONIGHT</p>
+        <iframe src="https://jirenicus.github.io/Spellbook-of-Fistandantilus/Articles/17092025_DFA.pdf" width="100%" height="600" frameborder="0"></iframe>
+    
+        <hr class="section-break">
+        <h2>YouTube Video</h2>
+        <p>Watch the related YouTube video:</p>
+        <iframe width="1024" height="630" src="https://www.youtube.com/watch?v=0wQBrURwRV8E" title="September 18, 2025 Day review" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p><a href="https://jirenicus.github.io/Spellbook-of-Fistandantilus/">Back to Spellbook</a></p>
+    </div>
+</body>
+</html>
